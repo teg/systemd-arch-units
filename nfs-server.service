@@ -2,6 +2,7 @@
 Description=NFS Server Daemon
 Conflicts=nfs-server.service
 After=rpcbind.service
+Requires=rpcbind.service
 
 [Service]
 Type=forking
