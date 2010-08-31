@@ -2,7 +2,5 @@
 Description=System Logger Daemon
 
 [Service]
-Type=forking
-ExecStart=/etc/rc.d/syslog-ng start
-ExecStop=/etc/rc.d/syslog-ng stop
-ExecReload=/etc/rc.d/syslog-ng reload
+ExecStart=/usr/sbin/syslog-ng -d
+Restart=restart-always
