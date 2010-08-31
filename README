@@ -1,14 +1,11 @@
-Arch Linux specific unit files for SystemD. These should all be placed in
-/etc/systemd/system and then symlinked into the appropriate *.target.wants
+Arch Linux-specific native unit files for SystemD. A PKGBUILD is available in
+the AUR [1] which installs these units to /etc/systemd/system. After
+installing, they should be symlinked into the appropriate *.target.wants
 directories.
 
 For example, I use the following setup:
 
 /etc/systemd/system
-├── alsa.service
-├── crond.service
-├── ctrl-alt-del.target -> /lib/systemd/system/reboot.target
-├── default.target -> /lib/systemd/system/graphical.target
 ├── getty.target.wants
 │   ├── getty@tty1.service -> /lib/systemd/system/getty@.service
 │   ├── getty@tty2.service -> /lib/systemd/system/getty@.service
@@ -18,8 +15,6 @@ For example, I use the following setup:
 │   ├── getty@tty6.service -> /lib/systemd/system/getty@.service
 │   └── syslog-ng.service -> ../syslog-ng.service
 ├── graphical.target.wants
-├── kbrequest.target -> /lib/systemd/system/rescue.target
-├── mpd.service
 ├── multi-user.target.wants
 │   ├── alsa.service -> ../alsa.service
 │   ├── crond.service -> ../crond.service
@@ -27,18 +22,26 @@ For example, I use the following setup:
 │   ├── getty.target -> /lib/systemd/system/getty.target
 │   ├── mpd.service -> ../mpd.service
 │   ├── network.service -> ../network.service
-│   ├── remote-fs.target -> /lib/systemd/system/remote-fs.target
-│   └── sshd.service -> ../sshd.service
-├── network.service
-├── network.target.wants
 │   ├── nfs-common.service -> ../nfs-common.service
-│   └── rpcbind.service -> ../rpcbind.service
+│   ├── remote-fs.target -> /lib/systemd/system/remote-fs.target
+│   ├── rpcbind.service -> ../rpcbind.service
+│   └── sshd.service -> ../sshd.service
+├── sockets.target.wants
+│   └── dbus.socket -> /lib/systemd/system/dbus.socket
+├── alsa.service
+├── crond.service
+├── ctrl-alt-del.target -> /lib/systemd/system/reboot.target
+├── default.target -> /lib/systemd/system/graphical.target
+├── exim.service
+├── kbrequest.target -> /lib/systemd/system/rescue.target
+├── mpd.service
+├── network.service
 ├── nfs-common.service
 ├── nfs-server.service
 ├── rpcbind.service
-├── sockets.target.wants
-│   └── dbus.socket -> /lib/systemd/system/dbus.socket
 ├── sshd.service
 └── syslog-ng.service
 
-5 directories, 30 files
+4 directories, 31 files
+
+[1] http://aur.archlinux.org/packages.php?ID=40419
