@@ -1,0 +1,3 @@
+Arch Linux specific unit files for SystemD. These should all be placed in
+/etc/systemd/system and then symlinked into the appropriate *.target.*wants
+directories.
