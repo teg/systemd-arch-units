@@ -3,6 +3,8 @@ Description=Cron Daemon
 
 [Service]
 Type=forking
+PIDFile=/var/run/crond.pid
 ExecStart=/etc/rc.d/crond start
 ExecStop=/etc/rc.d/crond stop
 ExecReload=/etc/rc.d/crond reload
+Restart=restart-always
