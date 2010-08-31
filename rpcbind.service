@@ -3,7 +3,5 @@ Description=SunRPC Portmap Daemon
 Before=nfs-common.service nfs-server.service
 
 [Service]
-Type=forking
-ExecStart=/etc/rc.d/rpcbind start
-ExecStop=/etc/rc.d/rpcbind stop
-ExecReload=/etc/rc.d/rpcbind reload
+ExecStart=/usr/bin/rpcbind -d
+RestartSec=1
