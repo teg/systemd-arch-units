@@ -1,0 +1,8 @@
+[Unit]
+Description=Exim Mail Daemon
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.d/exim start
+ExecStop=/etc/rc.d/exim stop
+ExecReload=/etc/rc.d/exim reload
