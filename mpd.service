@@ -2,6 +2,6 @@
 Description=Music Player Daemon
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/mpd /etc/mpd.conf
-ExecStop=/usr/bin/mpd --kill
+ExecStart=/usr/bin/mpd --no-daemon /etc/mpd.conf
+Restart=restart-always
+RestartSec=1
