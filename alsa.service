@@ -1,0 +1,8 @@
+[Unit]
+Description=Advanced Linux Sound Architecture
+
+[Service]
+RemainAfterExit=yes
+ExecStart=/etc/rc.d/alsa start
+ExecStop=/etc/rc.d/alsa stop
+ExecReload=/etc/rc.d/alsa reload

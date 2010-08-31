@@ -1,0 +1,10 @@
+[Unit]
+Description=NFS Client Daemon
+Conflicts=nfs-server.service
+After=rpcbind.service
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.d/nfs-common start
+ExecStop=/etc/rc.d/nfs-common stop
+ExecReload=/etc/rc.d/nfs-common reload
