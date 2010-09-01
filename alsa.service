@@ -6,3 +6,6 @@ RemainAfterExit=yes
 ExecStart=/etc/rc.d/alsa start
 ExecStop=/etc/rc.d/alsa stop
 ExecReload=/etc/rc.d/alsa reload
+
+[Install]
+WantedBy=multi-user.target

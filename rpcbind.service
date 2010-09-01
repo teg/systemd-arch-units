@@ -5,3 +5,6 @@ Before=nfs-common.service nfs-server.service
 [Service]
 ExecStart=/usr/bin/rpcbind -d
 RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

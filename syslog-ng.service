@@ -4,3 +4,6 @@ Description=System Logger Daemon
 [Service]
 ExecStart=/usr/sbin/syslog-ng -d
 Restart=restart-always
+
+[Install]
+WantedBy=multi-user.target
