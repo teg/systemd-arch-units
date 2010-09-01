@@ -2,11 +2,7 @@
 Description=OpenSSH Daemon
 
 [Service]
-Type=forking
-PIDFile=/var/run/sshd.pid
-ExecStart=/etc/rc.d/sshd start
-ExecStop=/etc/rc.d/sshd stop
-ExecReload=/etc/rc.d/sshd reload
+ExecStart=/usr/sbin/sshd -D
 Restart=restart-always
 
 [Install]
