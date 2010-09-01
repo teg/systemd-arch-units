@@ -1,0 +1,9 @@
+[Unit]
+Description=Heimdal Admin Server
+
+[Service]
+ExecStart=/usr/sbin/kadmind
+Restart=restart-always
+
+[Install]
+WantedBy=multi-user.target
