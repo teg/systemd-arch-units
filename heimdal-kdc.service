@@ -1,0 +1,9 @@
+[Unit]
+Description=Kerberos 5 Server
+
+[Service]
+ExecStart=/usr/sbin/kdc
+Restart=restart-always
+
+[Install]
+WantedBy=multi-user.target
