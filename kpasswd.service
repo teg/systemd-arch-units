@@ -1,0 +1,9 @@
+[Unit]
+Description=Heimdal kpasswd Daemon
+
+[Service]
+ExecStart=/usr/sbin/kpasswdd
+Restart=restart-always
+
+[Install]
+WantedBy=multi-user.target
