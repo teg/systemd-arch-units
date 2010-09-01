@@ -1,9 +1,13 @@
 Arch Linux-specific native unit files for SystemD. A PKGBUILD is available in
-the AUR [1] which installs these units to /etc/systemd/system. After
-installing, they should be symlinked into the appropriate *.target.wants
-directories.
+the AUR [1] which installs these units to /lib/systemd/system. After
+installing, units can be activated by using the systemctl utility, e.g.
 
-For example, I use the following setup:
+  systemctl enable rpcbind.service alsa.service ...
+
+Note that service units understand the idea of dependencies. Enabling a unit
+such as sshd.service will also pull in network.service.
+
+As an example, here's my setup:
 
 /etc/systemd/system
 ├── getty.target.wants
@@ -16,32 +20,22 @@ For example, I use the following setup:
 │   └── syslog-ng.service -> ../syslog-ng.service
 ├── graphical.target.wants
 ├── multi-user.target.wants
-│   ├── alsa.service -> ../alsa.service
-│   ├── crond.service -> ../crond.service
+│   ├── alsa.service -> /lib/systemd/system/alsa.service
+│   ├── crond.service -> /lib/systemd/system/crond.service
 │   ├── dbus.service -> /lib/systemd/system/dbus.service
 │   ├── getty.target -> /lib/systemd/system/getty.target
-│   ├── mpd.service -> ../mpd.service
-│   ├── network.service -> ../network.service
-│   ├── nfs-common.service -> ../nfs-common.service
+│   ├── mpd.service -> /lib/systemd/system/mpd.service
+│   ├── network.service -> /lib/systemd/system/network.service
+│   ├── nfs-common.service -> /lib/systemd/system/nfs-common.service
 │   ├── remote-fs.target -> /lib/systemd/system/remote-fs.target
-│   ├── rpcbind.service -> ../rpcbind.service
-│   └── sshd.service -> ../sshd.service
+│   ├── rpcbind.service -> /lib/systemd/system/rpcbind.service
+│   └── sshd.service -> /lib/systemd/system/sshd.service
 ├── sockets.target.wants
 │   └── dbus.socket -> /lib/systemd/system/dbus.socket
-├── alsa.service
-├── crond.service
 ├── ctrl-alt-del.target -> /lib/systemd/system/reboot.target
 ├── default.target -> /lib/systemd/system/graphical.target
-├── exim.service
-├── kbrequest.target -> /lib/systemd/system/rescue.target
-├── mpd.service
-├── network.service
-├── nfs-common.service
-├── nfs-server.service
-├── rpcbind.service
-├── sshd.service
-└── syslog-ng.service
+└── kbrequest.target -> /lib/systemd/system/rescue.target
 
-4 directories, 31 files
+4 directories, 21 files
 
 [1] http://aur.archlinux.org/packages.php?ID=40419
