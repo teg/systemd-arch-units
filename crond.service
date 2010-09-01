@@ -4,9 +4,8 @@ Description=Cron Daemon
 [Service]
 Type=forking
 PIDFile=/var/run/crond.pid
-ExecStart=/etc/rc.d/crond start
-ExecStop=/etc/rc.d/crond stop
-ExecReload=/etc/rc.d/crond reload
+EnvironmentFile=/etc/conf.d/crond
+ExecStart=/usr/sbin/crond -S -l info
 Restart=restart-always
 
 [Install]
