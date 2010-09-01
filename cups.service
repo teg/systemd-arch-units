@@ -1,0 +1,10 @@
+[Unit]
+Description=CUPS Daemon
+
+[Service]
+ExecStart=/usr/sbin/cupsd -f
+Restart=restart-always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
