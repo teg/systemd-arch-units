@@ -1,8 +1,7 @@
 [Unit]
 Description=NFS Server Daemon
-Conflicts=nfs-server.service
-After=rpcbind.service
-Requires=rpcbind.service
+After=rpcbind.service nfs-common.service
+Requires=rpcbind.service nfs-common.service
 
 [Service]
 Type=forking
@@ -12,4 +11,4 @@ ExecReload=/etc/rc.d/nfs-server reload
 
 [Install]
 WantedBy=multi-user.target
-Also=network.service rpcbind.service
+Also=network.service rpcbind.service nfs-common.service

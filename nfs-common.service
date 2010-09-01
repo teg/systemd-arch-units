@@ -1,6 +1,5 @@
 [Unit]
 Description=NFS Client Daemon
-Conflicts=nfs-server.service
 After=rpcbind.service
 Requires=rpcbind.service
 
