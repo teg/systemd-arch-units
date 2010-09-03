@@ -1,5 +1,6 @@
 [Unit]
 Description=Network Connectivity
+Before=network.target
 
 [Service]
 Type=oneshot
