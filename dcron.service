@@ -1,5 +1,6 @@
 [Unit]
 Description=Cron Daemon
+Wants=syslog.target
 
 [Service]
 Type=forking
