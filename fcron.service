@@ -1,0 +1,10 @@
+[Unit]
+Description=Cron Daemon
+Wants=syslog.target
+
+[Service]
+ExecStart=/usr/sbin/fcron -f
+Restart=restart-always
+
+[Install]
+WantedBy=multi-user.target
