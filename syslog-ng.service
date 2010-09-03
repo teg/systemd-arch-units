@@ -3,6 +3,6 @@ Description=System Logger Daemon
 Before=syslog.target
 
 [Service]
-ExecStart=/usr/sbin/syslog-ng -d
+ExecStart=/usr/sbin/syslog-ng -F
 Restart=restart-always
 
