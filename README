@@ -7,7 +7,7 @@ installing, units can be activated by using the systemctl utility, e.g.
 Note that service units understand the idea of dependencies. Enabling a unit
 such as sshd.service will also pull in network.service.
 
-As an example, here's my setup:
+As an example, here's a simple setup:
 
 /etc/systemd/system
 ├── getty.target.wants
