@@ -4,6 +4,7 @@ Wants=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/fcron -f
+ExecReload=/bin/kill -SIGUSR1 $(MAINPID)
 Restart=restart-always
 
 [Install]
