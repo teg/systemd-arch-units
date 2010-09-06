@@ -7,7 +7,6 @@ Requires=rpcbind.service
 Type=forking
 ExecStart=/etc/rc.d/nfs-common start
 ExecStop=/etc/rc.d/nfs-common stop
-ExecReload=/etc/rc.d/nfs-common reload
 
 [Install]
 WantedBy=multi-user.target

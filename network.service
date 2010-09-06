@@ -7,7 +7,6 @@ Type=oneshot
 RemainAfterExit=yes
 ExecStart=/etc/rc.d/network start
 ExecStop=/etc/rc.d/network stop
-ExecReload=/etc/rc.d/network reload
 
 [Install]
 WantedBy=multi-user.target
