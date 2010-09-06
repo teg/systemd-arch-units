@@ -5,8 +5,8 @@ Wants=syslog.target
 [Service]
 Type=forking
 PIDFile=/var/run/crond.pid
-EnvironmentFile=/etc/conf.d/crond
-ExecStart=/usr/sbin/crond -S -l info
+ExecStart=/etc/rc.d/crond start
+ExecStop=/etc/rc.d/crond stop
 Restart=restart-always
 
 [Install]
