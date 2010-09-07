@@ -6,7 +6,7 @@ After=network.target
 [Service]
 EnvironmentFile=/etc/conf.d/sshd
 ExecStartPre=/usr/bin/sshdgenkeys
-ExecStart=/usr/sbin/sshd -D
+ExecStart=/usr/sbin/sshd -D $SSHD_ARGS
 KillMode=process
 Restart=restart-always
 
