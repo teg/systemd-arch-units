@@ -20,7 +20,6 @@ ExecStart=-/sbin/sulogin
 StandardInput=tty-force
 Restart=restart-always
 RestartSec=0
-KillMode=process-group
 
 # Bash ignores SIGTERM, so we send SIGHUP instead, to ensure that bash
 # terminates cleanly.
