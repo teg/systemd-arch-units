@@ -1,7 +1,6 @@
 [Unit]
 Description=OpenSSH Daemon
-Requires=network.target
-After=network.target
+After=syslog.target
 
 [Service]
 EnvironmentFile=/etc/conf.d/sshd
