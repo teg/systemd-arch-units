@@ -1,0 +1,8 @@
+[Unit]
+Description=Syslog Socket
+
+[Socket]
+ListenStream=/dev/log
+
+[Install]
+WantedBy=sockets.target
