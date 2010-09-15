@@ -1,0 +1,11 @@
+[Unit]
+Description=Wicd Network Manager
+
+[Service]
+Type=dbus
+BusName=org.wicd.daemon
+ExecStart=/usr/bin/wicd-daemon.py -f
+Restart=restart-always
+
+[Install]
+WantedBy=network.target
