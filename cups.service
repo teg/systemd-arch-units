@@ -1,10 +1,20 @@
 [Unit]
-Description=CUPS Daemon
+Description=CUPS Printing Service
 
 [Service]
 ExecStart=/usr/sbin/cupsd -f
-Restart=restart-always
-RestartSec=1
+
+# This is evil stuff. CUPS should use proper enumeration instead of
+# retriggering these devices. CUPS folks, please fix this, otherwise Kay will
+# come after you!
+ExecStartPost=/sbin/udevadm trigger --subsystem-match=usb --attr-match=bInterfaceClass=07 --attr-match=bInterfaceSubClass=01
+ExecStartPost=/sbin/udevadm trigger --subsystem-match=usb --property-match=DEVNAME=/dev/usb/lp*
 
 [Install]
-WantedBy=multi-user.target
+# This is activated via any of these three triggers:
+# 1. Somebody connects to its sockets
+# 2. A file is in the spool directory
+# 3. A printer is plugged in
+# This follows the same scheme MacOS uses to spawn CUPS only when necessary
+Also=cups.socket cups.path
+WantedBy=printer.target
