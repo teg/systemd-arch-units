@@ -1,9 +1,9 @@
 [Unit]
 Description=SSH Per-Connection Server
-After=syslog.target
+Requires=sshdgenkeys.service
+After=syslog.target sshdgenkeys.service
 
 [Service]
-EnvironmentFile=/etc/conf.d/sshd
-ExecStartPre=/lib/systemd/scripts/sshdgenkeys
-ExecStart=/usr/sbin/sshd -i $SSHD_ARGS
+# SSHD_ARGS from /etc/conf.d/sshd is ignored
+ExecStart=/usr/sbin/sshd -i
 StandardInput=socket

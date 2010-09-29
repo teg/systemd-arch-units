@@ -1,0 +1,9 @@
+[Unit]
+Description=SSH Key Generation
+
+[Service]
+ExecStart=/lib/systemd/scripts/sshdgenkeys
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

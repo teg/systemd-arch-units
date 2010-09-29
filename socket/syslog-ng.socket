@@ -6,3 +6,4 @@ ListenStream=/dev/log
 
 [Install]
 WantedBy=sockets.target
+Also=sshdgenkeys.service

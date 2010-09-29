@@ -1,10 +1,10 @@
 [Unit]
 Description=OpenSSH Daemon
-After=syslog.target
+After=syslog.target sshdgenkeys.service
+Requires=sshdgenkeys.service
 
 [Service]
 EnvironmentFile=/etc/conf.d/sshd
-ExecStartPre=/lib/systemd/scripts/sshdgenkeys
 ExecStart=/usr/sbin/sshd -D $SSHD_ARGS
 KillMode=process
 Restart=restart-always
