@@ -4,7 +4,7 @@ TARGET_FILES = ${wildcard target/*}
 PATH_FILES = ${wildcard path/*}
 SCRIPTS = ${wildcard scripts/*}
 
-SD_LIBDIR ?= "lib/systemd/system"
+SD_LIBDIR ?= "lib/systemd"
 SD_UNITDIR ?= "${SD_LIBDIR}/system"
 SD_SCRIPTDIR ?= "${SD_LIBDIR}/scripts"
 
