@@ -16,17 +16,10 @@
 # USA.
 
 [Unit]
-Description=Avahi mDNS/DNS-SD Stack
-Requires=avahi-daemon.socket
-After=syslog.target
+Description=Avahi mDNS/DNS-SD Stack Activation Socket
 
-[Service]
-Type=dbus
-BusName=org.freedesktop.Avahi
-ExecStart=/usr/sbin/avahi-daemon -s
-ExecReload=/usr/sbin/avahi-daemon -r
-NotifyAccess=main
+[Socket]
+ListenStream=/var/run/avahi-daemon/socket
 
 [Install]
-WantedBy=multi-user.target
-Also=avahi-daemon.socket
+WantedBy=sockets.target
