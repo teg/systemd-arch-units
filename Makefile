@@ -1,10 +1,17 @@
-SERVICE_FILES = ${wildcard *.service}
-SOCKET_FILES = ${wildcard *.socket}
-PATH_FILES = ${wildcard *.path}
-SCRIPTS = sshdgenkeys
+SERVICE_FILES = ${wildcard service/*}
+SOCKET_FILES = ${wildcard socket/*}
+TARGET_FILES = ${wildcard target/*}
+PATH_FILES = ${wildcard path/*}
+SCRIPTS = ${wildcard scripts/*}
+
+SD_LIBDIR ?= "lib/systemd/system"
+SD_UNITDIR ?= "${SD_LIBDIR}/system"
+SD_SCRIPTDIR ?= "${SD_LIBDIR}/scripts"
 
 install:
-	install -d ${DESTDIR}/lib/systemd/system ${DESTDIR}/lib/systemd/scripts
-	install -m644 -t ${DESTDIR}/lib/systemd/system/ ${SERVICE_FILES} ${SOCKET_FILES} ${PATH_FILES}
-	install -m755 -t ${DESTDIR}/lib/systemd/scripts/ ${SCRIPTS}
+	install -d ${DESTDIR}/${SYSTEMD_LIB_DIR} \
+		${DESTDIR}/${SD_SCRIPTDIR} \
+		${DESTDIR}/${SD_UNITDIR}
+	install -m644 -t ${DESTDIR}/${SD_UNITDIR} ${SERVICE_FILES} ${SOCKET_FILES} ${TARGET_FILES} ${PATH_FILES}
+	install -m755 -t ${DESTDIR}/${SD_SCRIPTDIR} ${SCRIPTS}
 
