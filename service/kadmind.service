@@ -3,7 +3,7 @@ Description=Heimdal Admin Server
 
 [Service]
 ExecStart=/usr/sbin/kadmind
-Restart=restart-always
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

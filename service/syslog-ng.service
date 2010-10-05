@@ -4,5 +4,5 @@ Before=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/syslog-ng -F
-Restart=restart-always
+Restart=always
 

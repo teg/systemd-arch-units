@@ -7,7 +7,7 @@ Requires=sshdgenkeys.service
 EnvironmentFile=/etc/conf.d/sshd
 ExecStart=/usr/sbin/sshd -D $SSHD_ARGS
 KillMode=process
-Restart=restart-always
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

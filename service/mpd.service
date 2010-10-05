@@ -3,7 +3,7 @@ Description=Music Player Daemon
 
 [Service]
 ExecStart=/usr/bin/mpd --no-daemon /etc/mpd.conf
-Restart=restart-always
+Restart=always
 RestartSec=1
 
 [Install]

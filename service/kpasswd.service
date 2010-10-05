@@ -3,7 +3,7 @@ Description=Heimdal kpasswd Daemon
 
 [Service]
 ExecStart=/usr/sbin/kpasswdd
-Restart=restart-always
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
