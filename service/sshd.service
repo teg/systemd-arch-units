@@ -8,6 +8,7 @@ EnvironmentFile=/etc/conf.d/sshd
 ExecStart=/usr/sbin/sshd -D $SSHD_ARGS
 KillMode=process
 Restart=always
+StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target
