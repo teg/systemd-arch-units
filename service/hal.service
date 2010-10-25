@@ -1,7 +1,6 @@
 [Unit]
 Description=Hardware Manager
-After=syslog.target acpid.service
-Wants=acpid.service
+After=syslog.target
 
 [Service]
 Type=dbus
