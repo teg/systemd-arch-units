@@ -1,0 +1,11 @@
+[Unit]
+Description=K Display Manager on %I
+Requires=dev-%i.device
+After=dev-%i.device
+
+[Service]
+ExecStart=/usr/bin/kdm -nodaemon %I
+StandardOutput=syslog
+
+[Install]
+Alias=graphical.target.wants/kdm@tty7.service
