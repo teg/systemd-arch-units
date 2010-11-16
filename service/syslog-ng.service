@@ -1,8 +1,12 @@
 [Unit]
 Description=System Logger Daemon
+DefaultDependencies=no
+Conflicts=shutdown.target
 Before=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/syslog-ng -F
 Restart=always
 
+[Install]
+WantedBy=syslog.target
