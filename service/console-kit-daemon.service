@@ -6,7 +6,6 @@ After=syslog.target
 Type=dbus
 BusName=org.freedesktop.ConsoleKit
 ExecStart=/usr/sbin/console-kit-daemon --no-daemon
-StandardOutput=syslog
 
 [Install]
 # We pull this in by graphical.target instead of waiting for the bus
