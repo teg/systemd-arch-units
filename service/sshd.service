@@ -5,6 +5,7 @@ Requires=sshdgenkeys.service
 
 [Service]
 ExecStart=/usr/sbin/sshd -D
+ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=always
 StandardOutput=syslog
