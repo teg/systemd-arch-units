@@ -4,8 +4,7 @@ After=syslog.target sshdgenkeys.service
 Requires=sshdgenkeys.service
 
 [Service]
-EnvironmentFile=/etc/conf.d/sshd
-ExecStart=/usr/sbin/sshd -D $SSHD_ARGS
+ExecStart=/usr/sbin/sshd -D
 KillMode=process
 Restart=always
 StandardOutput=syslog
