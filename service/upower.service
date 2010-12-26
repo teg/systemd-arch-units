@@ -1,0 +1,11 @@
+[Unit]
+Description=UPower
+After=syslog.target
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.UPower
+ExecStart=/usr/lib/upower/upowerd
+
+[Install]
+WantedBy=graphical.target
