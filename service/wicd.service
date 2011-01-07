@@ -4,7 +4,7 @@ Description=Wicd Network Manager
 [Service]
 Type=dbus
 BusName=org.wicd.daemon
-ExecStart=/usr/bin/wicd-daemon.py -f
+ExecStart=/usr/sbin/wicd -f
 Restart=always
 
 [Install]
