@@ -1,0 +1,10 @@
+[Unit]
+Description=Network Time Service
+After=syslog.target
+
+[Service]
+EnvironmentFile=/etc/conf.d/ntp-client.conf
+ExecStart=/usr/bin/ntpd -n -u ntp:ntp $NTPD_ARGS
+
+[Install]
+WantedBy=multi-user.target
