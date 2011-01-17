@@ -1,0 +1,11 @@
+[Unit]
+Description=Anonymizing Overlay Network
+
+[Service]
+EnvironmentFile=/etc/conf.d/tor
+ExecStart=/usr/bin/tor -f $TOR_CONF --RunAsDaemon 0 $TOR_ARGS
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
