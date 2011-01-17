@@ -7,10 +7,11 @@
 
 [Unit]
 Description=Apply CPU microcode
-After=systemd-modules-load.service
 
 [Service]
-ExecStart=/usr/sbin/microcodectl -qu
+ExecStart=/usr/sbin/microcode_ctl -qu
 Type=oneshot
 RemainAfterExit=yes
 
+[Install]
+WantedBy=default.target
