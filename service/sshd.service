@@ -12,7 +12,6 @@ StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target
-Also=network.service
 
 # Note that this is the service file for running a single SSH server for all
 # incoming connections, suitable only for systems with a large amount of SSH
