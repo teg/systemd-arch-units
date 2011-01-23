@@ -7,7 +7,7 @@ After=local-fs.target
 Before=syslog.target
 
 [Service]
-ExecStart=/usr/sbin/syslog-ng -F --no-caps
+ExecStart=/usr/sbin/syslog-ng -F
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
 
