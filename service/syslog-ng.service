@@ -2,7 +2,7 @@
 Description=System Logger Daemon
 
 [Service]
-Socket=syslog.socket
+Sockets=syslog.socket
 ExecStartPre=/bin/systemctl stop systemd-syslog-kmsg.service
 ExecStart=/usr/sbin/syslog-ng -F
 ExecReload=/bin/kill -HUP $MAINPID
