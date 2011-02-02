@@ -1,15 +1,11 @@
 [Unit]
 Description=System Logger Daemon
-DefaultDependencies=no
-Conflicts=shutdown.target
-Requires=local-fs.target
-After=local-fs.target
-Before=syslog.target
 
 [Service]
+Socket=syslog.socket
+ExecStartPre=/bin/systemctl stop systemd-syslog-kmsg.service
 ExecStart=/usr/sbin/syslog-ng -F
 ExecReload=/bin/kill -HUP $MAINPID
-Restart=always
 
 [Install]
-WantedBy=syslog.target
+WantedBy=multi-user.target
