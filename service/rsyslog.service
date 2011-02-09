@@ -1,6 +1,6 @@
 [Unit]
 Description=System Logging Service
-Conflicts=systemd-syslog-kmsg.service
+Conflicts=systemd-kmsg-syslogd.service
 
 [Service]
 Sockets=syslog.socket
