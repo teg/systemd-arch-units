@@ -1,9 +1,10 @@
 [Unit]
 Description=System Logging Service
+Conflicts=systemd-syslog-kmsg.service
 
 [Service]
+Sockets=syslog.socket
 ExecStart=/usr/sbin/rsyslogd -n -c5
 
 [Install]
 WantedBy=multi-user.target
-Also=rsyslog.socket
