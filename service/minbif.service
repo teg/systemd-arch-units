@@ -1,0 +1,14 @@
+[Unit]
+Description=IRC gateway to IM networks
+After=network.service
+Requires=network.service
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+ExecStart=/usr/bin/minbif /etc/minbif/minbif.conf
+User=minbif
+Group=minbif
+
+[Install]
+WantedBy=multi-user.target
