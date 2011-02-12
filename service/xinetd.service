@@ -4,6 +4,7 @@ After=network.service
 
 [Service]
 PIDFile=/var/run/xinetd.pid
+Type=forking
 ExecStart=/usr/sbin/xinetd -stayalive -pidfile /var/run/xinetd.pid
 ExecStop=rm -f /var/run/xinetd.pid
 ExecReload=/bin/kill -HUP $MAINPID
