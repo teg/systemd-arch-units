@@ -1,0 +1,10 @@
+[Unit]
+Description=Network traffic monitor
+
+[Service]
+PIDFile=/var/run/vnstat.pid
+ExecStart=/usr/sbin/vnstatd -d
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
