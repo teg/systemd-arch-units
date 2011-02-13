@@ -1,6 +1,5 @@
 [Unit]
 Description=System Logger Daemon
-Conflicts=systemd-kmsg-syslogd.service
 
 [Service]
 Sockets=syslog.socket
@@ -8,4 +7,4 @@ ExecStart=/usr/sbin/syslog-ng -F
 ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=syslog.target
