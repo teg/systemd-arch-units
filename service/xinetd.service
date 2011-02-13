@@ -1,0 +1,12 @@
+[Unit]
+Description=A secure replacement for inetd
+After=network.service
+
+[Service]
+PIDFile=/var/run/xinetd.pid
+Type=forking
+ExecStart=/usr/sbin/xinetd -stayalive -pidfile /var/run/xinetd.pid
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
