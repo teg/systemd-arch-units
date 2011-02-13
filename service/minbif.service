@@ -4,9 +4,9 @@ After=network.service
 Requires=network.service
 
 [Service]
+PidFile=/var/run/minbif/minbif.pid
 Type=forking
-RemainAfterExit=yes
-ExecStart=/usr/bin/minbif /etc/minbif/minbif.conf
+ExecStart=/usr/bin/minbif --pidfile /var/run/minbif/minbif.pid /etc/minbif/minbif.conf
 User=minbif
 Group=minbif
 
