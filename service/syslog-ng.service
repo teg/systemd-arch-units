@@ -2,7 +2,6 @@
 Description=System Logger Daemon
 
 [Service]
-Sockets=syslog.socket
 ExecStart=/usr/sbin/syslog-ng -F
 ExecReload=/bin/kill -HUP $MAINPID
 
