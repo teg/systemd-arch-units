@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if ! [ -f /etc/ssh/ssh_host_key ]; then
-  /usr/bin/ssh-keygen -t rsa1 -N "" -f /etc/ssh/ssh_host_key >/dev/null || exit 1
-fi
-
 for ktype in rsa dsa ecdsa; do
   if ! [ -f /etc/ssh/ssh_host_${ktype}_key ]; then
     /usr/bin/ssh-keygen -t $ktype -N "" -f /etc/ssh/ssh_host_${ktype}_key >/dev/null || exit 1
