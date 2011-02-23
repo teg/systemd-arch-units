@@ -5,6 +5,6 @@ After=syslog.target sshdgenkeys.service
 
 [Service]
 # SSHD_ARGS from /etc/conf.d/sshd is ignored
-ExecStart=/usr/sbin/sshd -i
+ExecStart=-/usr/sbin/sshd -i
 ExecReload=/bin/kill -HUP $MAINPID
 StandardInput=socket
