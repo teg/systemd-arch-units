@@ -1,6 +1,6 @@
 [Unit]
 Description=OpenNTP Daemon
-After=syslog.target
+After=network.target
 
 [Service]
 EnvironmentFile=/etc/conf.d/openntpd
