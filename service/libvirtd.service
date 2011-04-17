@@ -1,0 +1,9 @@
+[Unit]
+Description=Libvirtd management daemon
+
+[Service]
+ExecStart=/usr/sbin/libvirtd
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
