@@ -7,4 +7,4 @@ ExecStartPre=/bin/systemctl stop systemd-kmsg-syslogd.service
 ExecStart=/usr/sbin/rsyslogd -n -c5
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=syslog.target
