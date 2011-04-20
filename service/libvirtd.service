@@ -2,7 +2,8 @@
 Description=Libvirtd management daemon
 
 [Service]
-ExecStart=/usr/sbin/libvirtd
+EnvironmentFile=/etc/conf.d/libvirtd
+ExecStart=/usr/sbin/libvirtd -f $LIBVIRTD_CONFIG
 ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]
