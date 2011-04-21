@@ -1,0 +1,8 @@
+[Unit]
+Description=MacBook Hotkey Event Handler
+
+[Service]
+ExecStart=/usr/sbin/pommed -f
+
+[Install]
+WantedBy=multi-user.target
