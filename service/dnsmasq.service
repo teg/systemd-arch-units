@@ -1,0 +1,10 @@
+[Unit]
+Description=A lightweight DHCP and caching DNS server
+
+[Service]
+ExecStartPre=/usr/sbin/dnsmasq --test
+ExecStart=/usr/sbin/dnsmasq --keep-in-foreground --pid-file
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
