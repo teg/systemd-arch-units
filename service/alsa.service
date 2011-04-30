@@ -1,5 +1,6 @@
 [Unit]
 Description=Advanced Linux Sound Architecture
+Before=sound.target
 
 [Service]
 RemainAfterExit=yes

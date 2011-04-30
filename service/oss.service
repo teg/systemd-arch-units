@@ -1,8 +1,9 @@
 [Unit]
 Description=Open Sound System v4
+Before=sound.target
 
 [Service]
-Type=simple
+Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/sbin/soundon
 ExecStop=/usr/sbin/soundoff
