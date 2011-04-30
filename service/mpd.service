@@ -1,10 +1,10 @@
 [Unit]
 Description=Music Player Daemon
+After=sound.target
+Requires=sound.target
 
 [Service]
 ExecStart=/usr/bin/mpd --no-daemon /etc/mpd.conf
-Restart=always
-RestartSec=1
 
 [Install]
 WantedBy=multi-user.target
