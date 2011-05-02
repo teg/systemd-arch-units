@@ -8,4 +8,4 @@ ExecStart=/usr/sbin/wicd -f
 Restart=always
 
 [Install]
-WantedBy=network.target
+WantedBy=multi-user.target
