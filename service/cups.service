@@ -13,10 +13,4 @@ ExecStartPost=/sbin/udevadm trigger --subsystem-match=usb --attr-match=bInterfac
 ExecStartPost=/sbin/udevadm trigger --subsystem-match=usb --property-match=DEVNAME=/dev/usb/lp*
 
 [Install]
-# This is activated via any of these three triggers:
-# 1. Somebody connects to its sockets
-# 2. A file is in the spool directory
-# 3. A printer is plugged in
-# This follows the same scheme MacOS uses to spawn CUPS only when necessary
-Also=cups.socket cups.path
-WantedBy=printer.target
+WantedBy=multi-user.target

@@ -1,8 +1,0 @@
-[Unit]
-Description=CUPS Printer Service Spool
-
-[Path]
-DirectoryNotEmpty=/var/spool/cups
-
-[Install]
-WantedBy=multi-user.target
