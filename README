@@ -1,41 +1,44 @@
-Arch Linux-specific native unit files for SystemD. A PKGBUILD is available in
-the AUR [1] which installs these units to /lib/systemd/system. After
-installing, units can be activated by using the systemctl utility, e.g.
+Arch Linux-specific native unit files for systemd. The [community] repo
+contains a package of these units designed to work with the latest tag of
+systemd. For more bleeding edge, a PKGBUILD is available in the AUR [1]. units
+can be activated by using the systemctl utility, e.g.
 
   systemctl enable rpcbind.service alsa.service ...
 
-Note that service units understand the idea of dependencies. Enabling a unit
-such as sshd.service will also pull in network.service.
+Which will create symlinks in /etc/system/system pointing to the unit files
+residing in /lib/systemd/system.
 
-As an example, here's a simple setup:
+As an example, here's a (my) simple setup:
 
 /etc/systemd/system
+├── default.target.wants
+│   └── microcode.service -> /lib/systemd/system/microcode.service
 ├── getty.target.wants
 │   ├── getty@tty1.service -> /lib/systemd/system/getty@.service
 │   ├── getty@tty2.service -> /lib/systemd/system/getty@.service
 │   ├── getty@tty3.service -> /lib/systemd/system/getty@.service
 │   ├── getty@tty4.service -> /lib/systemd/system/getty@.service
 │   ├── getty@tty5.service -> /lib/systemd/system/getty@.service
-│   ├── getty@tty6.service -> /lib/systemd/system/getty@.service
-│   └── syslog-ng.service -> ../syslog-ng.service
-├── graphical.target.wants
+│   └── getty@tty6.service -> /lib/systemd/system/getty@.service
+├── local-fs.target.wants
 ├── multi-user.target.wants
-│   ├── alsa.service -> /lib/systemd/system/alsa.service
-│   ├── crond.service -> /lib/systemd/system/crond.service
-│   ├── dbus.service -> /lib/systemd/system/dbus.service
-│   ├── getty.target -> /lib/systemd/system/getty.target
+│   ├── fcron.service -> /lib/systemd/system/fcron.service
 │   ├── mpd.service -> /lib/systemd/system/mpd.service
-│   ├── network.service -> /lib/systemd/system/network.service
-│   ├── nfs-common.service -> /lib/systemd/system/nfs-common.service
+│   ├── netcon.service -> ../netcon.service
+│   ├── oss.service -> /lib/systemd/system/oss.service
+│   ├── rc-local.service -> /lib/systemd/system/rc-local.service
 │   ├── remote-fs.target -> /lib/systemd/system/remote-fs.target
-│   ├── rpcbind.service -> /lib/systemd/system/rpcbind.service
-│   └── sshd.service -> /lib/systemd/system/sshd.service
+│   ├── rsyslog.service -> /lib/systemd/system/rsyslog.service
+│   └── sshdgenkeys.service -> /lib/systemd/system/sshdgenkeys.service
+├── netcon.service
+├── shutdown.target.wants
+│   └── arch-persistent-settings.service -> /lib/systemd/system/arch-persistent-settings.service
 ├── sockets.target.wants
-│   └── dbus.socket -> /lib/systemd/system/dbus.socket
-├── ctrl-alt-del.target -> /lib/systemd/system/reboot.target
-├── default.target -> /lib/systemd/system/graphical.target
-└── kbrequest.target -> /lib/systemd/system/rescue.target
+│   └── sshd.socket -> ../sshd.socket
+├── sshd.socket
+└── sysinit.target.wants
+    └── hwclock-load.service -> /lib/systemd/system/hwclock-load.service
 
-4 directories, 21 files
+7 directories, 20 files
 
-[1] http://aur.archlinux.org/packages.php?ID=40419
+[1] http://aur.archlinux.org/packages.php?ID=47603
