@@ -3,6 +3,7 @@ Description=MacBook Hotkey Event Handler
 
 [Service]
 ExecStart=/usr/sbin/pommed -f
+StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target
