@@ -2,10 +2,10 @@
 Description=Exim Mail Daemon
 
 [Service]
-Type=forking
+StandardOutput=syslog
 PIDFile=/var/run/exim.pid
-ExecStart=/etc/rc.d/exim start
-ExecStop=/etc/rc.d/exim stop
+ExecStart=/usr/sbin/exim -bdf -q30m
+ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]
 WantedBy=multi-user.target
