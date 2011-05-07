@@ -1,5 +1,6 @@
 [Unit]
 Description=Exim Mail Transfer Agent (message submission)
+Conflicts=exim.service
 
 [Socket]
 ListenStream=587
