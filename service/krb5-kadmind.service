@@ -1,5 +1,6 @@
 [Unit]
 Description=Kerberos 5 administration server
+After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/kadmind -nofork

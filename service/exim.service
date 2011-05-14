@@ -1,5 +1,6 @@
 [Unit]
 Description=Exim Mail Daemon
+After=syslog.target
 
 [Service]
 StandardOutput=syslog

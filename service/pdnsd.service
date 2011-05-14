@@ -1,5 +1,6 @@
 [Unit]
 Description=proxy name server
+After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/pdnsd

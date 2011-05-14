@@ -1,5 +1,6 @@
 [Unit]
 Description=Network traffic monitor
+After=syslog.target
 
 [Service]
 PIDFile=/var/run/vnstat.pid

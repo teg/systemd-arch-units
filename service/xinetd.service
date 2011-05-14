@@ -1,6 +1,6 @@
 [Unit]
 Description=A secure replacement for inetd
-After=network.service
+After=network.service syslog.target
 
 [Service]
 ExecStart=/usr/sbin/xinetd -dontfork

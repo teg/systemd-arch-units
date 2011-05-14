@@ -1,6 +1,7 @@
 [Unit]
 Description=SunRPC Portmap Daemon
 Before=nfs-common.service nfs-server.service
+After=syslog.target
 
 [Service]
 ExecStart=/usr/bin/rpcbind -d

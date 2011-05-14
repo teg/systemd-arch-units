@@ -1,5 +1,6 @@
 [Unit]
 Description=Wicd Network Manager
+After=syslog.target
 
 [Service]
 Type=dbus

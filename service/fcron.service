@@ -1,6 +1,6 @@
 [Unit]
 Description=Cron Daemon
-Wants=syslog.target
+After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/fcron -f

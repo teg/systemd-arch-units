@@ -1,5 +1,6 @@
 [Unit]
 Description=Web Proxy Cache Server
+After=syslog.target
 
 [Service]
 EnvironmentFile=/etc/conf.d/squid

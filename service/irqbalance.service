@@ -1,5 +1,6 @@
 [Unit]
 Description=IRQ Balancing Daemon
+After=syslog.target
 
 [Service]
 Type=forking

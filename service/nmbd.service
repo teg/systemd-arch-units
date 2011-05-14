@@ -1,5 +1,6 @@
 [Unit]
 Description=Samba NetBIOS name server
+After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/nmbd -F

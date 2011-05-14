@@ -1,5 +1,6 @@
 [Unit]
 Description=Polipo Proxy Server
+After=syslog.target
 
 [Service]
 ExecStart=/usr/bin/polipo

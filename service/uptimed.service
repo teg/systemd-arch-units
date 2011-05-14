@@ -1,5 +1,6 @@
 [Unit]
-Description = System uptime record daemon
+Description=System uptime record daemon
+After=syslog.target
 
 [Service]
 Type=forking

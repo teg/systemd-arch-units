@@ -1,5 +1,6 @@
 [Unit]
 Description=Anonymizing Overlay Network
+After=syslog.target
 
 [Service]
 EnvironmentFile=/etc/conf.d/tor

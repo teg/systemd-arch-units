@@ -1,5 +1,6 @@
 [Unit]
 Description=Kerberos 5 KDC
+After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/krb5kdc -n
