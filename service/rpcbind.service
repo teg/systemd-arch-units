@@ -1,11 +1,10 @@
 [Unit]
-Description=SunRPC Portmap Daemon
-Before=nfs-common.service nfs-server.service
-After=syslog.target
+Description=RPC Bind
 
 [Service]
-ExecStart=/usr/bin/rpcbind -d
-RestartSec=1
+Type=forking
+GuessMainPID=yes
+ExecStart=/usr/bin/rpcbind
 
 [Install]
 WantedBy=multi-user.target
