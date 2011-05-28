@@ -3,8 +3,10 @@ Description=A lightweight DHCP and caching DNS server
 After=syslog.target
 
 [Service]
+Type=forking
+PIDFile=/run/dnsmasq.pid
 ExecStartPre=/usr/sbin/dnsmasq --test
-ExecStart=/usr/sbin/dnsmasq --keep-in-foreground --pid-file
+ExecStart=/usr/sbin/dnsmasq --pid-file=/run/dnsmasq.pid
 ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]
