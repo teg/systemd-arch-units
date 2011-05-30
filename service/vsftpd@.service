@@ -3,6 +3,6 @@ Description=vsftpd per-connection server
 After=syslog.target
 
 [Service]
-ExecStart=/usr/sbin/vsftpd
+ExecStart=-/usr/sbin/vsftpd
 ExecReload=/bin/kill -HUP $MAINPID
 StandardInput=socket

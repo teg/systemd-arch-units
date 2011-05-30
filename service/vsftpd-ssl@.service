@@ -3,6 +3,6 @@ Description=vsftpd per-connection server (legacy implicit SSL)
 After=syslog.target
 
 [Service]
-ExecStart=/usr/sbin/vsftpd -oimplicit_ssl=yes
+ExecStart=-/usr/sbin/vsftpd -oimplicit_ssl=yes
 ExecReload=/bin/kill -HUP $MAINPID
 StandardInput=socket
