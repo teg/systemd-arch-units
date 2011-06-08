@@ -1,0 +1,11 @@
+[Unit]
+Description=File Alteration Monitor daemon
+Requires=rpcbind.service
+After=rpcbind.service
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/famd
+
+[Install]
+WantedBy=multi-user.target
