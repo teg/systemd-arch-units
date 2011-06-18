@@ -1,11 +1,11 @@
 [Unit]
 Description=Music Player Daemon
-After=sound.target
 Requires=sound.target
-After=syslog.target
+After=sound.target syslog.target
 
 [Service]
-ExecStart=/usr/bin/mpd --no-daemon /etc/mpd.conf
+Type=forking
+ExecStart=/usr/bin/mpd /etc/mpd.conf
 
 [Install]
 WantedBy=multi-user.target
