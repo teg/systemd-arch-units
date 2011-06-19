@@ -10,7 +10,6 @@ ExecStartPre=/bin/install -d /var/run/laptop-mode-tools ; /bin/touch /var/run/la
 ExecStart=/usr/sbin/laptop_mode auto
 ExecStop=/usr/sbin/laptop_mode stop
 ExecStopPost=/bin/rm -f /var/run/laptop-mode-tools/enabled
-ExecRestart=/usr/sbin/laptop_mode auto force
 
 [Install]
 WantedBy=multi-user.target
