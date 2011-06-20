@@ -3,9 +3,9 @@ Description=Cron Daemon
 After=syslog.target
 
 [Service]
-ExecStart=/usr/sbin/fcron -f
-ExecReload=/bin/kill -USR1 $MAINPID
-Restart=always
+Type=forking
+PIDFile=/run/fcron.pid
+ExecStart=/usr/sbin/fcron
 
 [Install]
 WantedBy=multi-user.target
