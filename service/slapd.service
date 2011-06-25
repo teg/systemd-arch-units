@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenLDAP server daemon
+After=syslog.target
+
+[Service]
+Type=forking
+EnvironmentFile=/etc/conf.d/slapd
+ExecStart=/usr/sbin/slapd $SLAPD_OPTIONS
+
+[Install]
+WantedBy=multi-user.target
