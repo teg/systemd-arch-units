@@ -1,11 +1,22 @@
 #!/bin/bash
+# Usage: iptables-flush [-6]
 
-for table in filter nat mangle raw; do
-  iptables -t "$table" -F
-  iptables -t "$table" -X
+IPTABLES=/usr/sbin/iptables
+TABLES="filter mangle raw"
+
+if [[ "$1" == "-6" ]]; then
+  IPTABLES=/usr/sbin/ip6tables
+else
+  # Only ipv4 has a nat table
+  TABLES="$TABLES nat"
+fi
+
+for table in $TABLES; do
+  $IPTABLES -t "$table" -F
+  $IPTABLES -t "$table" -X
 done
 
 for chain in INPUT FORWARD OUTPUT; do
-  iptables -P "$chain" ACCEPT
+  $IPTABLES -P "$chain" ACCEPT
 done
 
