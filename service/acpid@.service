@@ -1,0 +1,7 @@
+[Unit]
+Description=Socket Activated ACPID
+After=syslog.target
+
+[Service]
+ExecStart=/usr/sbin/acpid -f
+StandardInput=socket
