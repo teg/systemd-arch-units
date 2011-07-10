@@ -3,8 +3,9 @@ Description=MacBook Hotkey Event Handler
 After=syslog.target
 
 [Service]
-Type=forking
-ExecStart=/usr/sbin/pommed
+Type=dbus
+BusName=org.pommed
+ExecStart=/usr/sbin/pommed -f
 StandardOutput=syslog
 
 [Install]
