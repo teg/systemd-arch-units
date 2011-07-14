@@ -1,0 +1,13 @@
+[Unit]
+Description=CLI Netfilter Manager
+After=syslog.target
+
+[Service]
+Type=oneshot
+ExecStart=/lib/ufw/ufw-init start
+ExecRestart=/lib/ufw/ufw-init restart
+ExecStop=/lib/ufw/ufw-init stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
