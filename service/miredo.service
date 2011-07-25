@@ -5,6 +5,7 @@ After=network.target
 [Service]
 ExecStartPre=/usr/sbin/miredo-checkconf /etc/miredo/miredo.conf
 ExecStart=/usr/sbin/miredo -f
+ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]
 WantedBy=multi-user.target
