@@ -5,7 +5,7 @@ PATH_FILES = ${wildcard path/*}
 SCRIPTS = ${wildcard scripts/*}
 TMP_FILES = ${wildcard tmpfiles/*}
 
-SD_TMPDIR ?= etc/tmpfiles.d
+SD_TMPDIR ?= usr/lib/tmpfiles.d
 SD_LIBDIR ?= lib/systemd
 SD_UNITDIR ?= ${SD_LIBDIR}/system
 SD_SCRIPTDIR ?= ${SD_LIBDIR}/scripts
