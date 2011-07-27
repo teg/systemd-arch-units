@@ -1,6 +1,5 @@
 [Unit]
 Description=Name Service Cache Daemon
-After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/nscd -d

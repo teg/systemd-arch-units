@@ -1,6 +1,5 @@
 [Unit]
 Description=Anonymizing Overlay Network
-After=syslog.target
 
 [Service]
 Type=forking

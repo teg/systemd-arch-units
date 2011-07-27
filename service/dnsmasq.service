@@ -1,6 +1,5 @@
 [Unit]
 Description=A lightweight DHCP and caching DNS server
-After=syslog.target
 
 [Service]
 Type=forking

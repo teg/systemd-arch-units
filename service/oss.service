@@ -1,7 +1,6 @@
 [Unit]
 Description=Open Sound System v4
 Before=sound.target
-After=syslog.target
 
 [Service]
 Type=oneshot

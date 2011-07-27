@@ -1,6 +1,5 @@
 [Unit]
 Description=UDisks
-After=syslog.target
 
 [Service]
 Type=dbus

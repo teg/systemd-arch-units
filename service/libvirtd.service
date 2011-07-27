@@ -1,6 +1,5 @@
 [Unit]
 Description=Libvirtd management daemon
-After=syslog.target
 
 [Service]
 EnvironmentFile=/etc/conf.d/libvirtd

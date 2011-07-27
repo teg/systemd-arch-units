@@ -1,6 +1,5 @@
 [Unit]
 Description=Wi-Fi Security Service
-After=syslog.target
 
 [Service]
 Type=dbus
