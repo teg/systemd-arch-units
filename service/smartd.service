@@ -1,6 +1,5 @@
 [Unit]
 Description=Smart Monitoring Daemon
-After=syslog.target
 
 [Service]
 Type=forking

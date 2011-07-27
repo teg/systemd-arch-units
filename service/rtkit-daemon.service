@@ -17,7 +17,6 @@
 
 [Unit]
 Description=RealtimeKit Scheduling Policy Service
-After=syslog.target
 
 [Service]
 ExecStart=/usr/lib/rtkit-daemon

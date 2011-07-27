@@ -1,6 +1,5 @@
 [Unit]
 Description=Ident (RFC 1413) per-connection server
-After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/oidentd -I -u nobody -g nobody

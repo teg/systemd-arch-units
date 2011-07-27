@@ -1,6 +1,5 @@
 [Unit]
 Description=Fan control daemon
-After=syslog.target
 
 [Service]
 PIDFile=/var/run/fancontrol.pid

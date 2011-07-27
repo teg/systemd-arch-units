@@ -1,6 +1,5 @@
 [Unit]
 Description=vsftpd daemon
-After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/vsftpd -olisten_ipv6=yes

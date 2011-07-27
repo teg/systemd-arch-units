@@ -1,6 +1,5 @@
 [Unit]
 Description=ACPI event daemon
-After=syslog.target
 
 [Service]
 EnvironmentFile=/etc/conf.d/acpid

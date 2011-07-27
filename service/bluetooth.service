@@ -1,6 +1,5 @@
 [Unit]
 Description=Bluetooth Manager
-After=syslog.target
 
 [Service]
 Type=dbus

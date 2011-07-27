@@ -1,10 +1,8 @@
 [Unit]
 Description=Network traffic monitor
-After=syslog.target
 
 [Service]
-PIDFile=/var/run/vnstat.pid
-ExecStart=/usr/sbin/vnstatd -d
+ExecStart=/usr/sbin/vnstatd -n
 ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]

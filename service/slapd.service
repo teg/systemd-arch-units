@@ -1,6 +1,5 @@
 [Unit]
 Description=OpenLDAP server daemon
-After=syslog.target
 
 [Service]
 Type=forking
