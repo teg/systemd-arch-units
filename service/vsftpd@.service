@@ -1,6 +1,5 @@
 [Unit]
 Description=vsftpd per-connection server
-After=syslog.target
 
 [Service]
 ExecStart=-/usr/sbin/vsftpd

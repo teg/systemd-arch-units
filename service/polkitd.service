@@ -1,6 +1,5 @@
 [Unit]
 Description=Policy Manager
-After=syslog.target
 
 [Service]
 Type=dbus

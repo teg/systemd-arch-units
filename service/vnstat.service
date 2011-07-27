@@ -1,6 +1,5 @@
 [Unit]
 Description=Network traffic monitor
-After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/vnstatd -n

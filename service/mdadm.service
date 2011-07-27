@@ -1,6 +1,5 @@
 [Unit]
 Description=MDADM Event Monitor
-After=syslog.target
 
 [Service]
 ExecStart=/sbin/mdadm --monitor --scan

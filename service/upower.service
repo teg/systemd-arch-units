@@ -1,6 +1,5 @@
 [Unit]
 Description=UPower
-After=syslog.target
 
 [Service]
 Type=dbus

@@ -1,6 +1,5 @@
 [Unit]
 Description=CUPS Printing Service
-After=syslog.target
 
 [Service]
 ExecStart=/usr/sbin/cupsd -f
