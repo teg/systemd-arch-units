@@ -4,7 +4,6 @@ Description=CLI Netfilter Manager
 [Service]
 Type=oneshot
 ExecStart=/lib/ufw/ufw-init start
-ExecRestart=/lib/ufw/ufw-init restart
 ExecStop=/lib/ufw/ufw-init stop
 RemainAfterExit=yes
 
