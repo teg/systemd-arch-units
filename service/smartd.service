@@ -1,10 +1,9 @@
 [Unit]
-Description=Smart Monitoring Daemon
+Description=SMART Monitoring Daemon
 
 [Service]
-Type=forking
 EnvironmentFile=/etc/conf.d/smartd
-ExecStart=/usr/sbin/smartd $SMARTD_ARGS
+ExecStart=/usr/sbin/smartd -n $SMARTD_ARGS
 StandardOutput=syslog
 
 [Install]
