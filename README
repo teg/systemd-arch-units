@@ -1,9 +1,9 @@
-Arch Linux-specific native unit files for systemd. The [community] repo
-contains a package of these units designed to work with the latest tag of
-systemd. For more bleeding edge, a PKGBUILD is available in the AUR [1]. units
-can be activated by using the systemctl utility, e.g.
+A repo of native unit files for systemd, with some Arch-specific features. The
+[community] repo contains a package of these units designed to work with the
+latest tag of systemd. For more bleeding edge, a PKGBUILD is available in the
+AUR [1]. units can be activated by using the systemctl utility, e.g.
 
-  systemctl enable rpcbind.service alsa.service ...
+  systemctl enable rpcbind.service ...
 
 Which will create symlinks in /etc/system/system pointing to the unit files
 residing in /lib/systemd/system.
@@ -11,35 +11,34 @@ residing in /lib/systemd/system.
 As an example, here's a (my) simple setup:
 
 /etc/systemd/system
+├── dbus-uk.org.thekelleys.dnsmasq.service -> /etc/systemd/system/dnsmasq.service
 ├── default.target.wants
 │   └── microcode.service -> /lib/systemd/system/microcode.service
+├── dhcpd@.service
+├── dnsmasq.service
+├── enable-ksm.service
 ├── getty.target.wants
-│   ├── getty@tty1.service -> /lib/systemd/system/getty@.service
-│   ├── getty@tty2.service -> /lib/systemd/system/getty@.service
-│   ├── getty@tty3.service -> /lib/systemd/system/getty@.service
-│   ├── getty@tty4.service -> /lib/systemd/system/getty@.service
-│   ├── getty@tty5.service -> /lib/systemd/system/getty@.service
-│   └── getty@tty6.service -> /lib/systemd/system/getty@.service
+│   └── getty@tty1.service -> /lib/systemd/system/getty@.service
 ├── local-fs.target.wants
 ├── multi-user.target.wants
+│   ├── dnsmasq.service -> /etc/systemd/system/dnsmasq.service
+│   ├── enable-ksm.service -> /etc/systemd/system/enable-ksm.service
 │   ├── fcron.service -> /lib/systemd/system/fcron.service
+│   ├── iptables.service -> /lib/systemd/system/iptables.service
 │   ├── mpd.service -> /lib/systemd/system/mpd.service
-│   ├── netcon.service -> ../netcon.service
-│   ├── oss.service -> /lib/systemd/system/oss.service
-│   ├── rc-local.service -> /lib/systemd/system/rc-local.service
+│   ├── netcon.service -> /etc/systemd/system/netcon.service
 │   ├── remote-fs.target -> /lib/systemd/system/remote-fs.target
-│   ├── rsyslog.service -> /lib/systemd/system/rsyslog.service
-│   └── sshdgenkeys.service -> /lib/systemd/system/sshdgenkeys.service
+│   ├── sshdgenkeys.service -> /lib/systemd/system/sshdgenkeys.service
+│   ├── syslog-ng.service -> /lib/systemd/system/syslog-ng.service
+│   └── vde_switch@tap0.service -> /etc/systemd/system/vde_switch@.service
 ├── netcon.service
-├── shutdown.target.wants
-│   └── arch-persistent-settings.service -> /lib/systemd/system/arch-persistent-settings.service
 ├── sockets.target.wants
-│   └── sshd.socket -> ../sshd.socket
+│   └── sshd.socket -> /etc/systemd/system/sshd.socket
 ├── sshd.socket
-└── sysinit.target.wants
-    └── hwclock-load.service -> /lib/systemd/system/hwclock-load.service
+├── sysinit.target.wants
+└── vde_switch@.service
 
-7 directories, 20 files
+6 directories, 20 files
 
 [1] http://aur.archlinux.org/packages.php?ID=47603
 
