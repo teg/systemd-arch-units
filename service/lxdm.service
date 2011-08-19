@@ -9,4 +9,3 @@ StandardOutput=syslog
 
 [Install]
 WantedBy=graphical.target
-

@@ -10,4 +10,3 @@ ExecReload=/usr/sbin/squid -k reconfigure
 
 [Install]
 WantedBy=multi-user.target
-

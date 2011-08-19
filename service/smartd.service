@@ -8,4 +8,3 @@ StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target
-
