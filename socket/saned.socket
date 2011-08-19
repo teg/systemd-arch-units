@@ -6,4 +6,4 @@ ListenStream=6566
 Accept=yes
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=sockets.target
