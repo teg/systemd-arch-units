@@ -1,10 +1,8 @@
 [Unit]
 Description=ACPID Listen Socket
-Conflicts=acpid.service
 
 [Socket]
 ListenStream=/run/acpid.socket
-Accept=yes
 
 [Install]
 WantedBy=sockets.target

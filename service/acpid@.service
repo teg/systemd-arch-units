@@ -1,6 +1,0 @@
-[Unit]
-Description=Socket Activated ACPID
-
-[Service]
-ExecStart=/usr/sbin/acpid -f
-StandardInput=socket
