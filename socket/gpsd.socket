@@ -1,0 +1,9 @@
+[Unit]
+Description=GPS Service Socket
+
+[Socket]
+ListenStream=/run/gpsd.sock
+ListenStream=127.0.0.1:2947
+
+[Install]
+WantedBy=sockets.target

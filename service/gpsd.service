@@ -1,0 +1,7 @@
+[Unit]
+Description=GPS Service
+Requires=gpsd.socket
+
+[Service]
+EnvironmentFile=/etc/conf.d/gpsd
+ExecStart=/usr/sbin/gpsd -F /run/gpsd.sock -N $GPSD_OPTIONS $DEVICES
