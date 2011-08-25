@@ -1,5 +1,6 @@
 [Unit]
 Description=Network Time Service
+After=network.target
 
 [Service]
 Type=forking
