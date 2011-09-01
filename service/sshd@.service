@@ -8,3 +8,4 @@ After=syslog.target sshdgenkeys.service
 ExecStart=-/usr/sbin/sshd -i
 ExecReload=/bin/kill -HUP $MAINPID
 StandardInput=socket
+StandardError=syslog
