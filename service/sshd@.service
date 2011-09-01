@@ -1,7 +1,7 @@
 [Unit]
 Description=SSH Per-Connection Server
 Requires=sshdgenkeys.service
-After=syslog.target sshdgenkeys.service
+After=sshdgenkeys.service
 
 [Service]
 # SSHD_ARGS from /etc/conf.d/sshd is ignored
