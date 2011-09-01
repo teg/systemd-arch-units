@@ -8,3 +8,5 @@ Description=Exim Mail Daemon per-connection server (message submission)
 [Service]
 ExecStart=-/usr/sbin/exim -bs
 StandardInput=socket
+StandardOutput=socket
+StandardError=syslog
