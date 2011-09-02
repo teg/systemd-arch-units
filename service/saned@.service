@@ -5,3 +5,5 @@ Description=Scanner Service
 Group=scanner
 ExecStart=/usr/sbin/saned
 StandardInput=socket
+StandardOutput=socket
+StandardError=syslog

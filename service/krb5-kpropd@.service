@@ -5,3 +5,5 @@ Conflicts=krb5-kpropd.service
 [Service]
 ExecStart=/usr/sbin/kpropd
 StandardInput=socket
+StandardOutput=socket
+StandardError=syslog
