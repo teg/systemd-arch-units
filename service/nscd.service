@@ -2,7 +2,8 @@
 Description=Name Service Cache Daemon
 
 [Service]
-ExecStart=/usr/sbin/nscd -d
+Type=forking
+ExecStart=/usr/sbin/nscd
 ExecStop=/usr/sbin/nscd --shutdown
 Restart=always
 
