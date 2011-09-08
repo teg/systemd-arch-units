@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+PGDATA="$PGROOT/data"
+
+if [ ! -d "$PGDATA" ]; then
+    echo "Initializing database in $PGDATA"
+
+    # Evaluate options to expand $LANG
+    eval INITOPTS=\"$INITOPTS\"
+
+    mkdir -p "$PGDATA"
+    chown -R postgres:postgres "$PGDATA"
+    su - postgres -m -c "/usr/bin/initdb $INITOPTS -D '$PGDATA'" >/dev/null
+
+    if [ -f /etc/postgresql/postgresql.conf ]; then
+        ln -sf /etc/postgresql/postgresql.conf "$PGDATA/postgresql.conf"
+    fi
+fi
