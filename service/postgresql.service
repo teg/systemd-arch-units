@@ -1,0 +1,21 @@
+[Unit]
+Description=PostgreSQL database server
+
+[Service]
+Type=forking
+User=postgres
+PermissionsStartOnly=true
+EnvironmentFile=/etc/conf.d/postgresql
+SyslogIdentifier=postgres
+
+ExecStartPre=/lib/systemd/scripts/postgresql-initdb
+ExecStart=/usr/bin/pg_ctl -s -D ${PGROOT}/data start
+ExecReload=/bin/su - postgres -c "/usr/bin/pg_ctl -s -D '${PGROOT}/data' reload"
+ExecStop=  /bin/su - postgres -c "/usr/bin/pg_ctl -s -D '${PGROOT}/data' stop -m fast"
+
+# Due to PostgreSQL's use of shared memory, OOM killer is often overzealous in
+# killing Postgres
+OOMScoreAdjust=-200
+
+[Install]
+WantedBy=multi-user.target

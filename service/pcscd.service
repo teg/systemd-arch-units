@@ -1,0 +1,10 @@
+[Unit]
+Description=PC/SC smart card daemon
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/pcscd
+PIDFile=/run/pcscd/pcscd.pid
+
+[Install]
+WantedBy=multi-user.target
