@@ -8,6 +8,12 @@ set -e
 # doesn't exist yet
 if [ ! /var/lib/postgres -ef "$PGROOT" ] && [ /var/lib/postgres != "$PGROOT" ]; then
     echo "Creating symlink /var/lib/postgres -> $PGROOT"
+
+    # Remove /var/lib/postgres if empty dir, but not if symlink
+    if [ ! -L /var/lib/postgres ] && [ -d /var/lib/postgres ]; then
+        rmdir /var/lib/postgres
+    fi
+
     ln -sf "$PGROOT" /var/lib/postgres
 fi
 
