@@ -3,7 +3,6 @@ Description=PostgreSQL database server
 
 [Service]
 Type=forking
-User=postgres
 SyslogIdentifier=postgres
 PIDFile=/var/lib/postgres/data/postmaster.pid
 
