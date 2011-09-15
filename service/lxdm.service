@@ -5,7 +5,6 @@ After=dev-tty7.device systemd-user-sessions.service
 
 [Service]
 ExecStart=/usr/sbin/lxdm
-StandardOutput=syslog
 
 [Install]
 WantedBy=graphical.target

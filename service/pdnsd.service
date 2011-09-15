@@ -3,7 +3,6 @@ Description=proxy name server
 
 [Service]
 ExecStart=/usr/sbin/pdnsd
-StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target

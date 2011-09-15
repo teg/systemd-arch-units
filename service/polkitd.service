@@ -5,7 +5,6 @@ Description=Policy Manager
 Type=dbus
 BusName=org.freedesktop.PolicyKit1
 ExecStart=/usr/lib/polkit-1/polkitd
-StandardOutput=syslog
 
 [Install]
 # We pull this in by graphical.target instead of waiting for the bus

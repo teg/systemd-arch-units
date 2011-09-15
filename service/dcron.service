@@ -5,7 +5,6 @@ Description=Periodic Command Scheduler
 Type=forking
 EnvironmentFile=/etc/conf.d/crond
 ExecStart=/usr/sbin/crond $CROND_ARGS
-StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target

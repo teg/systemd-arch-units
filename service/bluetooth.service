@@ -5,7 +5,6 @@ Description=Bluetooth Manager
 Type=dbus
 BusName=org.bluez
 ExecStart=/usr/sbin/bluetoothd -n
-StandardOutput=syslog
 
 [Install]
 WantedBy=bluetooth.target

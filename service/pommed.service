@@ -5,7 +5,6 @@ Description=MacBook Hotkey Event Handler
 Type=dbus
 BusName=org.pommed
 ExecStart=/usr/sbin/pommed -f
-StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target

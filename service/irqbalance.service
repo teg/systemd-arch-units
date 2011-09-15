@@ -5,7 +5,6 @@ Description=IRQ Balancing Daemon
 Type=forking
 EnvironmentFile=/etc/conf.d/irqbalance
 ExecStart=/usr/sbin/irqbalance
-StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target

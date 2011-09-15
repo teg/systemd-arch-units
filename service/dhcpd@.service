@@ -5,7 +5,6 @@ Description=DHCP server
 ExecStart=/usr/sbin/dhcpd -%i -f -q
 ExecReload=/bin/kill -TERM $MAINPID
 KillSignal=SIGINT
-StandardOutput=syslog
 
 # Enable this service as:
 #    dhcpd@4.service for an ipv4 daemon
