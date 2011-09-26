@@ -3,7 +3,6 @@ Description=RPC Bind
 
 [Service]
 Type=forking
-GuessMainPID=yes
 ExecStart=/usr/bin/rpcbind
 
 [Install]
