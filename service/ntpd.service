@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=forking
 PIDFile=/run/ntpd.pid
-EnvironmentFile=/etc/conf.d/ntp-client.conf
+EnvironmentFile=/etc/conf.d/ntpd.conf
 ExecStart=/usr/bin/ntpd $NTPD_ARGS -p /run/ntpd.pid
 
 [Install]
