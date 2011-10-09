@@ -1,12 +1,9 @@
 [Unit]
-Description=SSH Per-Connection Server
-Requires=sshdgenkeys.service
+Description=OpenSSH Per-Connection Daemon
 After=sshdgenkeys.service
 
 [Service]
-# SSHD_ARGS from /etc/conf.d/sshd is ignored
 ExecStart=-/usr/sbin/sshd -i
 ExecReload=/bin/kill -HUP $MAINPID
 StandardInput=socket
-StandardOutput=socket
 StandardError=syslog
