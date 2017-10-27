@@ -1,0 +1,11 @@
+[Unit]
+Description=Disable USB wakeup triggers in /proc/acpi/wakeup
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo LID > /proc/acpi/wakeup; echo XHC > /proc/acpi/wakeup"
+ExecStop=/bin/sh -c "echo LID > /proc/acpi/wakeup; echo XHC > /proc/acpi/wakeup"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
